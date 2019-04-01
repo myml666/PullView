@@ -8,11 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="translucent" parent="Theme.AppCompat">
+        <!--背景设为透明-->
         <item name="android:windowBackground">@color/colorTrans</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:activityCloseEnterAnimation">@anim/trans_in</item>
         <item name="android:activityCloseExitAnimation">@anim/trans_out</item>
-        <!--<item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

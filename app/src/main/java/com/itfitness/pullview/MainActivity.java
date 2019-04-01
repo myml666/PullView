@@ -7,20 +7,15 @@ import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
-import com.itfitness.pullview.widget.PullView;
 import com.itfitness.pullview.widget.TaijiView;
 
 public class MainActivity extends AppCompatActivity {
-
-    private PullView pullview;
     private RelativeLayout relativelayout;
     private float mPullY = 0;
     private TaijiView taijiYin;
@@ -32,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        pullview = (PullView) findViewById(R.id.pullview);
         relativelayout = (RelativeLayout) findViewById(R.id.relativelayout);
         taijiYin = (TaijiView) findViewById(R.id.taijiYin);
         taijiYang = (TaijiView) findViewById(R.id.taijiYang);
@@ -51,21 +45,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startAnim();
-            }
-        });
-        relativelayout.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN){
-
-                    mPullY = event.getY();
-                    return true;
-                }else if(event.getAction() == MotionEvent.ACTION_MOVE){
-                    if(event.getY()>mPullY){
-                        pullview.setProgress((event.getY()-mPullY)>PullView.MAX_HEIGHT?1:(event.getY()-mPullY)/PullView.MAX_HEIGHT);
-                    }
-                }
-                return false;
             }
         });
     }

@@ -7,12 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.itfitness.pullview.MainActivity">
-
-    <com.itfitness.pullview.widget.PullView
-        android:id="@+id/pullview"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
     <com.itfitness.pullview.widget.TaijiView
         android:id="@+id/taijiYin"
         android:layout_centerInParent="true"
